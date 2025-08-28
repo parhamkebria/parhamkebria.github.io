@@ -22,7 +22,7 @@ I am a Postdoctoral Research Associate with a passion for research, innovation, 
 
 ## 📫 Contact
 Feel free to reach out to me via:
-- Email: parham.kebria@example.com
+- Email: parhamkebria@ieee.com
 - Website: <a href="https://parhamkebria.com" target="_blank">parhamkebria.com</a>
 
 ---
