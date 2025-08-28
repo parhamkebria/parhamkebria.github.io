@@ -15,7 +15,7 @@ I am a Postdoctoral Research Associate with a passion for research, innovation, 
 ## 🔬 Research Interests
 - Machine Learning and Artificial Intelligence
 - Robotics and Autonomous Systems
-- Medical Robotics
+- Teleoperation and Medical Robotics
 
 ---
 
