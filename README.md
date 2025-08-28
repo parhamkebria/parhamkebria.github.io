@@ -21,7 +21,7 @@ I am a Postdoctoral Research Associate with a passion for research, innovation, 
 
 ## 📫 Contact
 Feel free to reach out to me via:
-- U+1F4E7 parhamkebria@ieee.com
+- 📧 parhamkebria@ieee.com
 - 🌐 <a href="https://parhamkebria.com" target="_blank">parhamkebria.com</a>
 
 ---
