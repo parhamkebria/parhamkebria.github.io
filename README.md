@@ -8,7 +8,7 @@ Welcome to my personal website repository!
 ---
 
 ## 🧠 About Me
-I am a Postdoctoral Research Associate with a passion for research, innovation, and sharing knowledge. This website serves as a digital profile to showcase my academic journey, interests, and contributions.
+I am a Research Scientist with a passion for research, innovation, and sharing knowledge. This website serves as a digital profile to showcase my academic journey, interests, and contributions.
 
 ---
 
