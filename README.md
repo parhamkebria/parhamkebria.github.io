@@ -21,7 +21,7 @@ I am a Research Scientist with a passion for research, innovation, and sharing k
 
 ## 📫 Contact
 Feel free to reach out to me via:
-- 📧 parhamkebria@ieee.com
+📧 parhamkebria@ieee.com
 
 
 ---
@@ -29,7 +29,6 @@ Feel free to reach out to me via:
 ## 📁 Repository Contents
 - `index.html`: Main webpage
 - `style.css`: Styling for the site
-- `profile.jpg`: Profile image (optional)
 - `CNAME`: Custom domain configuration
 
 ---
