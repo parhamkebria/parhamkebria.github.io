@@ -32,7 +32,7 @@ body {
     height: 100vh;
     background:
         linear-gradient(rgba(244,244,244,0.75), rgba(224,231,255,0.75)),
-        url('assets/robomed.png');
+        url('assets/robomed.png'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
