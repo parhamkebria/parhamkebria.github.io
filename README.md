@@ -3,7 +3,7 @@
 
 Welcome to my personal website repository!
 
-- 🌐 <a href="https://parhamkebria.com" target="_blank">parhamkebria.com</a>
+🌐 <a href="https://parhamkebria.com" target="_blank">parhamkebria.com</a>
 
 ---
 
