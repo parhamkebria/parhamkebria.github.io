@@ -3,7 +3,7 @@
 
 Welcome to my personal website repository!
 
-<a href="https://parhamkebria.com" target="_blank">🌐 Visit My Website</a>
+- 🌐 <a href="https://parhamkebria.com" target="_blank">parhamkebria.com</a>
 
 ---
 
@@ -22,7 +22,7 @@ I am a Research Scientist with a passion for research, innovation, and sharing k
 ## 📫 Contact
 Feel free to reach out to me via:
 - 📧 parhamkebria@ieee.com
-- 🌐 <a href="https://parhamkebria.com" target="_blank">parhamkebria.com</a>
+
 
 ---
 
