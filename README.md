@@ -18,8 +18,8 @@ I am a research scientist with a passion for research, innovation, and sharing k
 ---
 
 ## 📫 Contact
-Feel free to reach out to me via:
-📧 parhamkebria@ieee.org
+Feel free to reach out to me:
+- 📧 parhamkebria@ieee.org
 
 
 ---
