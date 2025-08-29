@@ -30,6 +30,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url('assets/tesla_optimus_robot_love-wallpaper-2560x1440.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: linear-gradient(135deg, rgba(244,244,244,0.9) 60%, rgba(224,231,255,0.7) 100%);
 }
 
 .container {
