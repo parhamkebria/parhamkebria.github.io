@@ -1,3 +1,24 @@
+/* Logo styling for header */
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-bottom: 8px;
+    margin-right: 10px;
+    display: inline-block;
+}
+/* Position the photo at the top-left corner responsively */
+.my-photo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    height: auto;
+    border-radius: 8px; /* optional: rounded corners */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* optional: subtle shadow */
+    z-index: 1000;
+}
 
 body {
     font-family: 'Segoe UI', sans-serif;
