@@ -51,6 +51,15 @@ body {
     max-width: 1000px;
 }
 
+.home-container {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .profile-img {
     width: 150px;
     height: 150px;
