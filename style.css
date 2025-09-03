@@ -12,9 +12,9 @@
 /* Position the photo at the top-left corner responsively */
 .my-photo {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    max-width: 15vw;
+    top: 10px;
+    left: 10px;
+    max-width: 12vw;
     width: 100%;
     height: auto;
     border-radius: 8px; /* optional: rounded corners */
