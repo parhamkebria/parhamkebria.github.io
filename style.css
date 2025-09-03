@@ -28,10 +28,12 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     background:
         linear-gradient(rgba(244,244,244,0.75), rgba(224,231,255,0.75)),
         url('assets/robomed.png'); 
