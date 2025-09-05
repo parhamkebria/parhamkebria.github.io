@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parham Kebria</title>
-    <link rel="icon" type="image/jpeg" href="assets/PiLogo.jpg">
+    <link rel="icon" type="image/jpeg" href="assets/PiLogo.jpg" style="width: 100px; height: auto; border-radius: 50%;">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,12 +14,13 @@
     <div class="home-container">
         <header>
             <a href="index.html">
-                <img src="assets/PiLogo.jpg" alt="Pi Logo" class="logo">
+                <img src="assets/PiLogo.jpg" alt="Pi Logo" class="logo"style="width: 100px; height: auto; border-radius: 50%;">
             </a>
             <h1>Parham Kebria</h1>
             <h2>Research Scientist | Roboticist</h2>
         </header>
-
+        
+        <!-- <div class="container"> -->
         <section>
             <h3>🧠 About Me 🧠</h3>
             <p class="justify-text">
@@ -49,6 +50,7 @@
             <img src="assets/matlab-svgrepo-com.svg" alt="Mathworks MATLAB" style="height: 24px; vertical-align: middle; display: inline-block;"></a>
             </p>
         </section>
+        <!-- </div> -->
         <section>
             <h3 style="text-align: center;">🔬 Interests & Expertise</h3>
             <ul style="text-align: left;">
@@ -65,12 +67,28 @@
                 <li style="text-align: left;">🌐 <a href="index.html">parhamkebria.com</a></li>
             </ul>
         </section>
+        
         <nav>
             <p> </p>
             <a href="index.html">Home</a> |
             <a href="cv.html">CV</a> |
             <a href="projects.html">Projects</a>
         </nav>
+
+        <p></p>
+
+        <footer class="wrap" style="opacity:.8; font-size: 13px;">
+            © <span id="y"></span> All rights reserved — <a href="index.html">parhamkebria.com</a>
+        </footer>
+        <script>
+            document.getElementById('y').textContent = new Date().getFullYear();
+        </script>
+
+        <p></p>
+
     </div>
+    
+    
+
 </body>
 </html>

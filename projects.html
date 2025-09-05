@@ -1,30 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Parham Kebria</title>
-    <link rel="icon" type="image/jpeg" href="assets/PiLogo.jpg">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="index.html">
-                <img src="assets/PiLogo.jpg" alt="Pi Logo" class="logo">
-            </a>
-            <h1>Parham Kebria</h1>
-            <h2>Projects</h2>
-        </header>
-        <section>
-            <h3>Projects</h3>
-            <p>Coming soon!</p>
-        </section>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="cv.html">CV</a> |
-            <a href="projects.html">Projects</a>
-        </nav>
-    </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | Parham Kebria</title>
+    <link rel="icon" type="image/jpeg" href="assets/PiLogo.jpg" />
+
+    <meta
+      name="description"
+      content="A showcase of projects by Parham Kebria, featuring robotics, AI, and telemedicine innovations."
+    />
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: rgba(255, 255, 255, 0.06);
+        --card: rgba(255, 255, 255, 0.04);
+        --text: #e8eefc;
+        --muted: #b7c3e0;
+        --brand: #5aa9ff;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --maxw: 1120px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.6;
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px 20px 80px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(90, 169, 255, 0.18),
+          rgba(255, 255, 255, 0.02)
+        );
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .hero h1 {
+        font-size: clamp(28px, 4.5vw, 48px);
+        margin: 0;
+      }
+      .hero p {
+        color: var(--muted);
+        max-width: 700px;
+        margin: 12px auto 0;
+        font-size: 18px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .card .bd {
+        padding: 18px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 20px;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap">
+      <div class="hero">
+        <a href="index.html">
+          <img
+            src="assets/PiLogo.jpg"
+            alt="Pi Logo"
+            class="logo"
+            style="width: 100px; height: auto; border-radius: 50%"
+          />
+        </a>
+        <h1>Projects</h1>
+        <p>
+          A collection of projects showcasing robotics, artificial intelligence,
+          telemedicine, and data-driven innovation.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="grid">
+        <!-- Project 1: HERCULES -->
+        <div class="card">
+          <img
+            src="https://img.youtube.com/vi/ZCKWxHAiQvE/maxresdefault.jpg"
+            alt="HERCULES project image"
+          />
+          <div class="bd">
+            <h3>
+              <a href="hercules.html">HERCULES — Tele‑Robotic Ultrasound</a>
+            </h3>
+            <p>
+              The world’s first haptically‑enabled tele‑robotic ultrasound
+              system, validated in clinical trials and featured in IEEE Access.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://img.youtube.com/vi/EISgE9mGMtw/maxresdefault.jpg"
+            alt="Project 2 image"
+          />
+          <div class="bd">
+            <h3><a href="army.html">Autonomous Leader‑Follower Vehicles</a></h3>
+            <p>
+              Vision-based real-time ML/DL systems enabling autonomous military
+              convoys with vehicle-to-vehicle networking.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/herochi01.png" alt="Project 3 image" />
+          <div class="bd">
+            <h3><a href="#">Cross‑Platform Surgical Skill Transfer</a></h3>
+            <p>
+              Multi-modal learning framework for robotic surgical platforms
+              using synchronized endoscopic images and joint data.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/complexsurgical.png" alt="Surgical project image" />
+          <div class="bd">
+            <h3>
+              <a href="#"
+                >Robust Deep Learning Frameworks for Complex Surgical Tasks</a
+              >
+            </h3>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/surgseg.png" alt="Surgical project image" />
+          <div class="bd">
+            <h3>
+              <a href="#">Instance Surgical Instrument Segmentation</a>
+            </h3>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://img.youtube.com/vi/Ryk_1negylY/maxresdefault.jpg"
+            alt="ICRA 2023"
+          />
+          <div class="bd">
+            <h3>
+              <a href="icra.html"
+                >Stable Adaptive Neural Filters for Teleoperations with
+                Uncertain Delays (ICRA'23)</a
+              >
+            </h3>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="y"></span> <a href="index.html">Parham Kebria</a> — Projects
+      Showcase
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

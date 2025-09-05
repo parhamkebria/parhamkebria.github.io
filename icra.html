@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stable Adaptive Neural Filters | Parham Kebria</title>
+    <meta
+      name="description"
+      content="Stable Adaptive Neural Filters for Teleoperations with Uncertain Delays - ICRA 2023 presentation and IEEE RA-L paper."
+    />
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: rgba(255, 255, 255, 0.06);
+        --card: rgba(255, 255, 255, 0.04);
+        --text: #e8eefc;
+        --muted: #b7c3e0;
+        --brand: #5aa9ff;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --maxw: 960px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.6;
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px 20px 80px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(90, 169, 255, 0.18),
+          rgba(255, 255, 255, 0.02)
+        );
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .hero h1 {
+        font-size: clamp(28px, 4.5vw, 46px);
+        margin: 0;
+      }
+      .hero p {
+        color: var(--muted);
+        max-width: 700px;
+        margin: 12px auto 0;
+        font-size: 18px;
+      }
+
+      .video-card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-top: 40px;
+        overflow: hidden;
+      }
+      .video-card iframe {
+        width: 100%;
+        height: 480px;
+        border: 0;
+        display: block;
+      }
+
+      .content {
+        margin-top: 40px;
+        background: var(--panel);
+        padding: 28px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .content h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      .content p {
+        color: var(--muted);
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+
+      .thumbnail {
+        text-align: center;
+        margin-top: 30px;
+      }
+      .thumbnail img {
+        max-width: 100%;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .link-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: var(--radius);
+        background: var(--brand);
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .link-button:hover {
+        background: #4084d8;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap">
+      <div class="hero">
+        <h1>Stable Adaptive Neural Filters for Teleoperations</h1>
+        <p>
+          ICRA 2023 presentation and IEEE RA-L publication on adaptive neural
+          filters that stabilize teleoperation systems under uncertain and
+          time-varying delays.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/kiTS_zMr1Xg"
+          title="ICRA 2023 Presentation"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="content">
+        <h2>Project Highlights</h2>
+        <p>
+          This project introduces an adaptive neural filter to improve stability
+          and performance in teleoperation systems under random, time-varying
+          delays. Key challenges addressed include:
+        </p>
+        <ul>
+          <li>
+            <strong>Instability from network uncertainties:</strong> Random
+            delays in communication networks can destabilize teleoperation
+            systems.
+          </li>
+          <li>
+            <strong>Degraded performance:</strong> Delays reduce operator
+            transparency and system usability.
+          </li>
+          <li>
+            <strong>Balancing stability and performance:</strong> Conventional
+            methods are often overly conservative, limiting performance.
+          </li>
+        </ul>
+        <p>
+          <strong>Neural filter approach:</strong> An adaptive NN dynamically
+          adjusts filter coefficients, ensures stability via Lyapunov-Krasovskii
+          analysis, avoids local minima, and provides accurate signal
+          estimations under uncertain delays.
+        </p>
+        <p>
+          <strong>Experimental results:</strong> Demonstrated outstanding
+          performance, improved stability, and smoother teleoperation operation
+          on a real-world platform.
+        </p>
+        <a
+          href="https://ieeexplore.ieee.org/document/9547844"
+          class="link-button"
+          target="_blank"
+          >Read Paper on IEEE RA-L</a
+        >
+      </div>
+    </main>
+
+    <footer>
+      © <span id="y"></span> <a href="index.html">Parham Kebria</a> — Stable
+      Adaptive Neural Filters
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
