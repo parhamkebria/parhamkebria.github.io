@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cross-Platorm Surgical Skill Transfer | Parham Kebria</title>
+    <meta
+      name="description"
+      content="Foundation models can significantly improve robotic surgical systems by enabling real-time perception, adaptive control, and autonomous decision-making."
+    />
+    <link rel="icon" type="image/jpeg" href="assets/PiLogo.jpg" />
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: rgba(255, 255, 255, 0.06);
+        --card: rgba(255, 255, 255, 0.04);
+        --text: #e8eefc;
+        --muted: #b7c3e0;
+        --brand: #5aa9ff;
+        --accent: #99e2b4;
+        --danger: #ff7a7a;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --maxw: 1120px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        color: var(--text);
+        background: radial-gradient(
+            1200px 800px at 20% -10%,
+            rgba(90, 169, 255, 0.18),
+            rgba(0, 0, 0, 0)
+          ),
+          radial-gradient(
+            1000px 600px at 120% 10%,
+            rgba(153, 226, 180, 0.14),
+            rgba(0, 0, 0, 0)
+          ),
+          var(--bg);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.6;
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px 20px 80px;
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        border-radius: var(--radius);
+        padding: 48px 28px;
+        background: linear-gradient(
+          135deg,
+          rgba(90, 169, 255, 0.18),
+          rgba(255, 255, 255, 0.02)
+        );
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        background: radial-gradient(
+          600px 320px at 90% 10%,
+          rgba(255, 255, 255, 0.08),
+          rgba(0, 0, 0, 0)
+        );
+        pointer-events: none;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--panel);
+        color: var(--muted);
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      .hero h1 {
+        margin: 14px 0 10px;
+        font-size: clamp(28px, 4.5vw, 48px);
+        line-height: 1.1;
+      }
+      .hero p {
+        margin: 0 0 22px;
+        font-size: clamp(16px, 2.3vw, 20px);
+        color: var(--muted);
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: var(--panel);
+        color: var(--text);
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.06s ease, background 0.2s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+      }
+      .btn.primary {
+        background: linear-gradient(
+          180deg,
+          rgba(90, 169, 255, 0.25),
+          rgba(90, 169, 255, 0.2)
+        );
+        border-color: rgba(90, 169, 255, 0.35);
+      }
+      .btn.accent {
+        background: linear-gradient(
+          180deg,
+          rgba(153, 226, 180, 0.25),
+          rgba(153, 226, 180, 0.18)
+        );
+        border-color: rgba(153, 226, 180, 0.35);
+      }
+
+      /* GRID */
+      .grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 22px;
+        margin-top: 22px;
+      }
+      @media (max-width: 960px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* VIDEO CARD */
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .card .hd {
+        padding: 16px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0)
+        );
+      }
+      .card .hd h3 {
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+        color: var(--muted);
+      }
+      .ratio {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        background: #09101d;
+      }
+      .ratio iframe,
+      .ratio .embed {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .card .bd {
+        padding: 16px 18px;
+        color: var(--muted);
+      }
+
+      /* BADGES / STATS */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .stat {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 14px;
+        text-align: center;
+      }
+      .stat .k {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--text);
+      }
+      .stat .t {
+        font-size: 12px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+      @media (max-width: 760px) {
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* HIGHLIGHTS */
+      .section {
+        margin-top: 40px;
+      }
+      .section h2 {
+        margin: 0 0 10px;
+        font-size: clamp(22px, 3.5vw, 30px);
+      }
+      .kicker {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+      .hi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .hi {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .hi h4 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+      .hi p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      @media (max-width: 960px) {
+        .hi-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ARTICLE */
+      .article {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 18px;
+      }
+      .article .card .bd p {
+        margin: 0.4rem 0;
+      }
+      @media (max-width: 960px) {
+        .article {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* FOOTER CTA */
+      .cta-bar {
+        margin-top: 36px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        padding: 18px;
+      }
+      .cta-bar p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      /* ACCESSIBILITY */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap">
+      <div id="project-surgical-transfer" class="hero">
+        <h1>
+          Cross-Platform Surgical Skill Transfer Using Multi-Modal Learning
+        </h1>
+        <p>
+          Foundation models can significantly improve robotic surgical systems
+          by enabling real-time perception, adaptive control, and autonomous
+          decision-making.
+        </p>
+      </div>
+    </header>
+
+    <main class="hero wrap">
+      <!-- <section class="section"></section> -->
+        <div>
+          <h2>About the Project</h2>
+          <p>
+            This project explores a
+            <strong>novel framework for robotic surgical systems</strong> that
+            enables the transfer of surgical skills across different robotic
+            platforms. Leveraging <strong>multi-modal learning</strong>, our
+            approach integrates endoscopic imagery and synchronized joint angle
+            data to bridge the gap between platforms with limited sensor
+            information. By combining
+            <em
+              >self-supervised learning, domain adaptation, and foundation
+              models</em
+            >, the framework paves the way for more generalizable and autonomous
+            surgical robotics.
+          </p>
+        </div>
+        <div>
+          <img
+            src="assets/herochi01.png"
+            alt="Project 3 image"
+            style="width: 100%; border-radius: 8px; margin-top: 10px"
+          />
+        </div>
+      </section>
+
+      <!-- <section class="section" aria-labelledby="art-h2"> -->
+      <div>
+        <ul
+          style="
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            padding-left: 20px;
+          "
+        >
+          <ulstrong style="color: #ebc5c5; font-size: 1.5rem"
+            >Key Innovations:</ulstrong
+          >
+          <li>
+            <strong>Multi-Modal Representation:</strong> Fusion of visual and
+            kinematic data for robust skill modeling.
+          </li>
+          <li>
+            <strong>Cross-Platform Transfer:</strong> Domain adaptation
+            techniques enable generalization across robotic systems.
+          </li>
+          <li>
+            <strong>Self-Supervised Joint Estimation:</strong> Learning joint
+            motion from video frames when direct data is unavailable.
+          </li>
+          <li>
+            <strong>Real & Simulated Validation:</strong> Evaluated on both real
+            surgical data and physics-based simulation environments.
+          </li>
+        </ul>
+
+        <p>
+          This framework has strong implications for
+          <strong
+            >robotic surgery training, autonomous skill transfer, and
+            cross-device compatibility</strong
+          >. It reduces reliance on platform-specific data and accelerates the
+          adoption of AI-driven robotic surgical assistants. The methodology
+          also extends to other robotic domains, including teleoperation,
+          rehabilitation, and industrial manipulation.
+        </p>
+
+        <blockquote
+          style="
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #ebc5c5;
+            border-left: 4px solid #1a1a40;
+            padding-left: 15px;
+            margin-bottom: 30px;
+          "
+        >
+          “Our goal is to enable robotic systems to
+          <strong>learn once and adapt everywhere</strong>, ensuring skill
+          transfer between different surgical platforms seamlessly.”
+        </blockquote>
+
+        <div class="cta">
+          <a
+            class="btn primary"
+            href="mailto:parhamkebria@ieee.org"
+            aria-label="Email contact"
+            >Learn More / Get in Touch ✉️</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer class="wrap" style="opacity: 0.8; font-size: 13px">
+      © <span id="y"></span> Cross-Platform Surgical Skill Transfer — All rights
+      reserved — <a href="index.html"> Parham Kebria</a>
+    </footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

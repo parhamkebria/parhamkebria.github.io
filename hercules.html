@@ -1,257 +1,665 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HERCULES — Tele‑Robotic Ultrasound | Project Showcase</title>
-  <meta name="description" content="National news coverage and IEEE Access featured article for HERCULES — a haptically‑enabled tele‑robotic ultrasound system validated in clinical trials." />
-  <link rel="icon" type="image/jpeg" href="assets/PiLogo.jpg">
-  <style>
-    :root {
-      --bg: #0b1220;
-      --panel: rgba(255,255,255,0.06);
-      --card: rgba(255,255,255,0.04);
-      --text: #e8eefc;
-      --muted: #b7c3e0;
-      --brand: #5aa9ff;
-      --accent: #99e2b4;
-      --danger: #ff7a7a;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      --radius: 18px;
-      --maxw: 1120px;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0; color: var(--text); background: radial-gradient(1200px 800px at 20% -10%, rgba(90,169,255,0.18), rgba(0,0,0,0)) ,
-                                radial-gradient(1000px 600px at 120% 10%, rgba(153,226,180,0.14), rgba(0,0,0,0)) ,
-                                var(--bg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      line-height: 1.6;
-    }
-    a { color: var(--brand); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HERCULES — Tele‑Robotic Ultrasound | Project Showcase</title>
+    <meta
+      name="description"
+      content="National news coverage and IEEE Access featured article for HERCULES — a haptically‑enabled tele‑robotic ultrasound system validated in clinical trials."
+    />
+    <link rel="icon" type="image/jpeg" href="assets/PiLogo.jpg" />
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: rgba(255, 255, 255, 0.06);
+        --card: rgba(255, 255, 255, 0.04);
+        --text: #e8eefc;
+        --muted: #b7c3e0;
+        --brand: #5aa9ff;
+        --accent: #99e2b4;
+        --danger: #ff7a7a;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --maxw: 1120px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        color: var(--text);
+        background: radial-gradient(
+            1200px 800px at 20% -10%,
+            rgba(90, 169, 255, 0.18),
+            rgba(0, 0, 0, 0)
+          ),
+          radial-gradient(
+            1000px 600px at 120% 10%,
+            rgba(153, 226, 180, 0.14),
+            rgba(0, 0, 0, 0)
+          ),
+          var(--bg);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.6;
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px 80px; }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px 20px 80px;
+      }
 
-    /* HERO */
-    .hero { position: relative; border-radius: var(--radius); padding: 48px 28px; background: linear-gradient(135deg, rgba(90,169,255,0.18), rgba(255,255,255,0.02)); box-shadow: var(--shadow); overflow: hidden; }
-    .hero::after { content: ""; position: absolute; inset: -2px; background: radial-gradient(600px 320px at 90% 10%, rgba(255,255,255,0.08), rgba(0,0,0,0)); pointer-events: none; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 6px 12px; border-radius: 999px; background: var(--panel); color: var(--muted); font-weight: 600; letter-spacing: .3px; text-transform: uppercase; font-size: 12px; }
-    .hero h1 { margin: 14px 0 10px; font-size: clamp(28px, 4.5vw, 48px); line-height: 1.1; }
-    .hero p { margin: 0 0 22px; font-size: clamp(16px, 2.3vw, 20px); color: var(--muted); }
-    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: var(--panel); color: var(--text); font-weight: 600; text-decoration: none; transition: transform .06s ease, background .2s ease; }
-    .btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.10); text-decoration: none; }
-    .btn.primary { background: linear-gradient(180deg, rgba(90,169,255,0.25), rgba(90,169,255,0.20)); border-color: rgba(90,169,255,0.35); }
-    .btn.accent { background: linear-gradient(180deg, rgba(153,226,180,0.25), rgba(153,226,180,0.18)); border-color: rgba(153,226,180,0.35); }
+      /* HERO */
+      .hero {
+        position: relative;
+        border-radius: var(--radius);
+        padding: 48px 28px;
+        background: linear-gradient(
+          135deg,
+          rgba(90, 169, 255, 0.18),
+          rgba(255, 255, 255, 0.02)
+        );
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        background: radial-gradient(
+          600px 320px at 90% 10%,
+          rgba(255, 255, 255, 0.08),
+          rgba(0, 0, 0, 0)
+        );
+        pointer-events: none;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--panel);
+        color: var(--muted);
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      .hero h1 {
+        margin: 14px 0 10px;
+        font-size: clamp(28px, 4.5vw, 48px);
+        line-height: 1.1;
+      }
+      .hero p {
+        margin: 0 0 22px;
+        font-size: clamp(16px, 2.3vw, 20px);
+        color: var(--muted);
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: var(--panel);
+        color: var(--text);
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.06s ease, background 0.2s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+      }
+      .btn.primary {
+        background: linear-gradient(
+          180deg,
+          rgba(90, 169, 255, 0.25),
+          rgba(90, 169, 255, 0.2)
+        );
+        border-color: rgba(90, 169, 255, 0.35);
+      }
+      .btn.accent {
+        background: linear-gradient(
+          180deg,
+          rgba(153, 226, 180, 0.25),
+          rgba(153, 226, 180, 0.18)
+        );
+        border-color: rgba(153, 226, 180, 0.35);
+      }
 
-    /* GRID */
-    .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px; margin-top: 22px; }
-    @media (max-width: 960px){ .grid { grid-template-columns: 1fr; } }
+      /* GRID */
+      .grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 22px;
+        margin-top: 22px;
+      }
+      @media (max-width: 960px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    /* VIDEO CARD */
-    .card { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-    .card .hd { padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; gap: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0)); }
-    .card .hd h3 { margin: 0; font-size: 16px; letter-spacing: .2px; color: var(--muted); }
-    .ratio { position: relative; aspect-ratio: 16 / 9; background: #09101d; }
-    .ratio iframe, .ratio .embed { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .card .bd { padding: 16px 18px; color: var(--muted); }
+      /* VIDEO CARD */
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .card .hd {
+        padding: 16px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0)
+        );
+      }
+      .card .hd h3 {
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+        color: var(--muted);
+      }
+      .ratio {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        background: #09101d;
+      }
+      .ratio iframe,
+      .ratio .embed {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .card .bd {
+        padding: 16px 18px;
+        color: var(--muted);
+      }
 
-    /* BADGES / STATS */
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
-    .stat { background: var(--panel); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 14px; text-align: center; }
-    .stat .k { font-size: 22px; font-weight: 800; color: var(--text); }
-    .stat .t { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .3px; }
-    @media (max-width: 760px){ .stats { grid-template-columns: repeat(2, 1fr); } }
+      /* BADGES / STATS */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .stat {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 14px;
+        text-align: center;
+      }
+      .stat .k {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--text);
+      }
+      .stat .t {
+        font-size: 12px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+      @media (max-width: 760px) {
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
 
-    /* HIGHLIGHTS */
-    .section { margin-top: 40px; }
-    .section h2 { margin: 0 0 10px; font-size: clamp(22px, 3.5vw, 30px); }
-    .kicker { color: var(--muted); margin: 0 0 16px; }
-    .hi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .hi { background: var(--panel); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 16px; }
-    .hi h4 { margin: 0 0 6px; font-size: 16px; }
-    .hi p { margin: 0; color: var(--muted); font-size: 14px; }
-    @media (max-width: 960px){ .hi-grid { grid-template-columns: 1fr; } }
+      /* HIGHLIGHTS */
+      .section {
+        margin-top: 40px;
+      }
+      .section h2 {
+        margin: 0 0 10px;
+        font-size: clamp(22px, 3.5vw, 30px);
+      }
+      .kicker {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+      .hi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .hi {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .hi h4 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+      .hi p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      @media (max-width: 960px) {
+        .hi-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    /* ARTICLE */
-    .article { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
-    .article .card .bd p { margin: 0.4rem 0; }
-    @media (max-width: 960px){ .article { grid-template-columns: 1fr; } }
+      /* ARTICLE */
+      .article {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 18px;
+      }
+      .article .card .bd p {
+        margin: 0.4rem 0;
+      }
+      @media (max-width: 960px) {
+        .article {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    /* FOOTER CTA */
-    .cta-bar { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0)); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 18px; }
-    .cta-bar p { margin: 0; color: var(--muted); }
+      /* FOOTER CTA */
+      .cta-bar {
+        margin-top: 36px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        padding: 18px;
+      }
+      .cta-bar p {
+        margin: 0;
+        color: var(--muted);
+      }
 
-    /* ACCESSIBILITY */
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-  </style>
+      /* ACCESSIBILITY */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+    </style>
 
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "HERCULES — Haptically‑Enabled Tele‑Robotic Ultrasound",
-    "author": [{"@type":"Person","name":"Parham M. Kebria"}],
-    "about": ["telemedicine", "robotic ultrasound", "haptics", "clinical trial"],
-    "url": "",
-    "sameAs": [
-      "https://www.youtube.com/watch?v=ZCKWxHAiQvE",
-      "https://ieeeaccess.ieee.org/featured-articles/hercules_remotelycontrolled/"
-    ],
-    "citation": {
-      "@type": "Article",
-      "name": "HERCULES: Haptically‑Enabled Remotely Controlled Ultrasound Examination System",
-      "isPartOf": {"@type": "Periodical", "name": "IEEE Access"},
-      "url": "https://ieeeaccess.ieee.org/featured-articles/hercules_remotelycontrolled/"
-    }
-  }
-  </script>
-</head>
-<body>
-  <header class="wrap">
-    <div class="hero">
-      <span class="eyebrow" aria-label="Media & Publication">Featured • Media & Publication</span>
-      <h1>HERCULES — Tele‑Robotic Ultrasound with Real‑Time Haptics</h1>
-      <p>
-        National news coverage and a peer‑reviewed feature in <strong>IEEE Access</strong> highlight a world‑first:
-        safe, high‑fidelity remote ultrasound scanning validated in clinical trials.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="https://www.youtube.com/watch?v=ZCKWxHAiQvE" target="_blank" rel="noopener">
-          ▶ Watch the News Coverage
-        </a>
-        <a class="btn accent" href="https://ieeeaccess.ieee.org/featured-articles/hercules_remotelycontrolled/" target="_blank" rel="noopener">
-          📄 Read the IEEE Access Article
-        </a>
-      </div>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "HERCULES — Haptically‑Enabled Tele‑Robotic Ultrasound",
+        "author": [{ "@type": "Person", "name": "Parham M. Kebria" }],
+        "about": [
+          "telemedicine",
+          "robotic ultrasound",
+          "haptics",
+          "clinical trial"
+        ],
+        "url": "",
+        "sameAs": [
+          "https://www.youtube.com/watch?v=ZCKWxHAiQvE",
+          "https://ieeeaccess.ieee.org/featured-articles/hercules_remotelycontrolled/"
+        ],
+        "citation": {
+          "@type": "Article",
+          "name": "HERCULES: Haptically‑Enabled Remotely Controlled Ultrasound Examination System",
+          "isPartOf": { "@type": "Periodical", "name": "IEEE Access" },
+          "url": "https://ieeeaccess.ieee.org/featured-articles/hercules_remotelycontrolled/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="wrap">
+      <div class="hero">
+        <span class="eyebrow" aria-label="Media & Publication"
+          >Featured • Media & Publication</span
+        >
+        <h1>HERCULES — Tele‑Robotic Ultrasound with Real‑Time Haptics</h1>
+        <p>
+          National news coverage and a peer‑reviewed feature in
+          <strong>IEEE Access</strong> highlight a world‑first: safe,
+          high‑fidelity remote ultrasound scanning validated in clinical trials.
+        </p>
+        <div class="cta">
+          <a
+            class="btn primary"
+            href="https://www.youtube.com/watch?v=ZCKWxHAiQvE"
+            target="_blank"
+            rel="noopener"
+          >
+            ▶ Watch the News Coverage
+          </a>
+          <a
+            class="btn accent"
+            href="https://ieeeaccess.ieee.org/featured-articles/hercules_remotelycontrolled/"
+            target="_blank"
+            rel="noopener"
+          >
+            📄 Read the IEEE Access Article
+          </a>
+        </div>
 
-      <div class="grid" aria-label="Project media and summary">
-        <!-- Video Card -->
-        <section class="card" aria-labelledby="video-h3">
-          <div class="hd">
-            <h3 id="video-h3">National News Feature</h3>
-            <a class="btn" href="https://www.youtube.com/watch?v=ZCKWxHAiQvE" target="_blank" rel="noopener">Open in YouTube ↗</a>
-          </div>
-          <div class="ratio" role="region" aria-label="Embedded video">
-            <iframe title="HERCULES — Tele‑Robotic Ultrasound (News Coverage)"
-              src="https://www.youtube.com/embed/ZCKWxHAiQvE?rel=0&modestbranding=1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          <div class="bd">
-            <p>
-              <strong>What you’ll see:</strong> A real clinical demonstration of remote ultrasound, where the operator
-              controls probe motion and pressure via force‑feedback, maintaining diagnostic image quality without being
-              physically in the room.
-            </p>
-            <div class="stats" aria-label="At-a-glance metrics">
-              <div class="stat"><div class="k">Tele‑op</div><div class="t">Haptic Control</div></div>
-              <div class="stat"><div class="k">Clinical</div><div class="t">Trial Validated</div></div>
-              <div class="stat"><div class="k">Safety</div><div class="t">No Incidents</div></div>
-              <div class="stat"><div class="k">Ergonomics</div><div class="t">MSD Relief</div></div>
+        <div class="grid" aria-label="Project media and summary">
+          <!-- Video Card -->
+          <section class="card" aria-labelledby="video-h3">
+            <div class="hd">
+              <h3 id="video-h3">National News Feature</h3>
+              <a
+                class="btn"
+                href="https://www.youtube.com/watch?v=ZCKWxHAiQvE"
+                target="_blank"
+                rel="noopener"
+                >Open in YouTube ↗</a
+              >
             </div>
-          </div>
-        </section>
+            <div class="ratio" role="region" aria-label="Embedded video">
+              <iframe
+                title="HERCULES — Tele‑Robotic Ultrasound (News Coverage)"
+                src="https://www.youtube.com/embed/ZCKWxHAiQvE?rel=0&modestbranding=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="bd">
+              <p>
+                <strong>What you’ll see:</strong> A real clinical demonstration
+                of remote ultrasound, where the operator controls probe motion
+                and pressure via force‑feedback, maintaining diagnostic image
+                quality without being physically in the room.
+              </p>
+              <div class="stats" aria-label="At-a-glance metrics">
+                <div class="stat">
+                  <div class="k">Tele‑op</div>
+                  <div class="t">Haptic Control</div>
+                </div>
+                <div class="stat">
+                  <div class="k">Clinical</div>
+                  <div class="t">Trial Validated</div>
+                </div>
+                <div class="stat">
+                  <div class="k">Safety</div>
+                  <div class="t">No Incidents</div>
+                </div>
+                <div class="stat">
+                  <div class="k">Ergonomics</div>
+                  <div class="t">MSD Relief</div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-        <!-- Summary Card -->
-        <aside class="card" aria-labelledby="sum-h3">
-          <div class="hd">
-            <h3 id="sum-h3">Executive Summary</h3>
-          </div>
-          <div class="bd">
-            <p><strong>HERCULES</strong> is a haptically‑enabled, tele‑operated ultrasound platform designed to improve access
-              to imaging while reducing musculoskeletal strain on clinicians. It delivers precise probe manipulation,
-              realistic force feedback, and robust performance over real networks.</p>
-            <p>In clinical settings, remote scans matched the clarity and diagnostic value of manual scans, with enhanced
-              operator ergonomics and built‑in patient safety mechanisms.</p>
-          </div>
-        </aside>
+          <!-- Summary Card -->
+          <aside class="card" aria-labelledby="sum-h3">
+            <div class="hd">
+              <h3 id="sum-h3">Executive Summary</h3>
+            </div>
+            <div class="bd">
+              <p>
+                <strong>HERCULES</strong> is a haptically‑enabled, tele‑operated
+                ultrasound platform designed to improve access to imaging while
+                reducing musculoskeletal strain on clinicians. It delivers
+                precise probe manipulation, realistic force feedback, and robust
+                performance over real networks.
+              </p>
+              <p>
+                In clinical settings, remote scans matched the clarity and
+                diagnostic value of manual scans, with enhanced operator
+                ergonomics and built‑in patient safety mechanisms.
+              </p>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="wrap">
-    <!-- Highlights -->
-    <section class="section" aria-labelledby="hi-h2">
-      <h2 id="hi-h2">Project Highlights</h2>
-      <p class="kicker">A quick tour of the clinical impact and technology under the hood.</p>
-      <div class="hi-grid">
-        <div class="hi">
-          <h4>Clinical Trial Validation</h4>
-          <p>Demonstrated diagnostic‑grade image quality during remote abdominal and chest scans in a real clinical environment.</p>
-        </div>
-        <div class="hi">
-          <h4>Ergonomics & Safety</h4>
-          <p>Force‑feedback control reduces operator strain; integrated e‑stop and safeguards ensure patient safety throughout procedures.</p>
-        </div>
-        <div class="hi">
-          <h4>Network‑Robust Tele‑Operation</h4>
-          <p>Stable, precise control of probe pose and pressure with perceptually smooth haptics over practical network conditions.</p>
-        </div>
-        <div class="hi">
-          <h4>High‑Fidelity Haptics</h4>
-          <p>Realistic contact forces allow the operator to “feel” tissue interfaces remotely, improving placement and consistency.</p>
-        </div>
-        <div class="hi">
-          <h4>Modular System Architecture</h4>
-          <p>Decoupled subsystems (perception, control, safety, UI) enable rapid iteration and integration with clinical workflows.</p>
-        </div>
-        <div class="hi">
-          <h4>Scalable Access to Care</h4>
-          <p>Enables remote imaging in underserved settings while making ultrasound safer and more sustainable for clinicians.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Article -->
-    <section class="section" aria-labelledby="art-h2">
-      <h2 id="art-h2">Featured in IEEE Access</h2>
-      <p class="kicker">Peer‑reviewed coverage of the methods, clinical protocol, and outcomes.</p>
-      <div class="article">
-        <article class="card" aria-labelledby="paper-h3">
-          <div class="hd">
-            <h3 id="paper-h3">HERCULES: Haptically‑Enabled Remotely Controlled Ultrasound Examination System</h3>
-          </div>
-          <div class="bd">
-            <p><strong>Abstract (short):</strong> We present a tele‑robotic ultrasound platform with real‑time haptics, designed for safe,
-              effective remote scanning. Clinical findings indicate image quality comparable to manual scans with improved
-              ergonomics for operators.</p>
-            <p><strong>Keywords:</strong> Telemedicine, haptics, ultrasound, perception‑in‑the‑loop control, clinical trial.</p>
+    <main class="wrap">
+      <!-- Highlights -->
+      <section class="section" aria-labelledby="hi-h2">
+        <h2 id="hi-h2">Project Highlights</h2>
+        <p class="kicker">
+          A quick tour of the clinical impact and technology under the hood.
+        </p>
+        <div class="hi-grid">
+          <div class="hi">
+            <h4>Clinical Trial Validation</h4>
+            <!-- <img -->
+            <video
+              id="clinicalVideo"
+              autoplay
+              loop
+              muted
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            >
+              <source src="assets/clinicals.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <script>
+              document.getElementById("clinicalVideo").playbackRate = 2.0; // 1.0 is normal speed
+            </script>
+            <!-- alt="Clinical trial validation image"
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            /> -->
             <p>
-              <a class="btn" href="https://ieeexplore.ieee.org/document/10979984" target="_blank" rel="noopener">Read the article ↗</a>
+              Demonstrated diagnostic‑grade image quality during remote
+              abdominal and chest scans in a real clinical environment.
             </p>
           </div>
-        </article>
-        <aside class="card" aria-labelledby="ref-h3">
-          <div class="hd"><h3 id="ref-h3">Recommended Links</h3></div>
-          <div class="bd">
-            <p>• News coverage: <a href="https://www.youtube.com/watch?v=ZCKWxHAiQvE" target="_blank" rel="noopener">YouTube</a></p>
-            <p>• Featured article: <a href="https://ieeeaccess.ieee.org/featured-articles/hercules_remotelycontrolled/" target="_blank" rel="noopener">IEEE Access</a></p>
-            <p>• Contact the team for collaborations or clinical pilots.</p>
+          <div class="hi">
+            <h4>Ergonomics & Safety</h4>
+            <img
+              src="assets/msk.png"
+              alt="Ergonomics & Safety image"
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            />
+            <p>
+              Force‑feedback control reduces operator strain; integrated e‑stop
+              and safeguards ensure patient safety throughout procedures.
+            </p>
           </div>
-        </aside>
+          <div class="hi">
+            <h4>Network‑Robust Tele‑Operation</h4>
+            <img
+              src="assets/errors.png"
+              alt="Network‑Robust Tele‑Operation image"
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            />
+            <img
+              src="assets/delays.png"
+              alt="Network‑Robust Tele‑Operation image"
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            />
+            <p>
+              Stable, precise control of probe pose and pressure with
+              perceptually smooth haptics over practical network conditions.
+            </p>
+          </div>
+          <div class="hi">
+            <h4>High‑Fidelity Haptics</h4>
+            <img
+              src="assets/forces.png"
+              alt="High‑Fidelity Haptics image"
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            />
+            <p>
+              Realistic contact forces allow the operator to “feel” tissue
+              interfaces remotely, improving placement and consistency.
+            </p>
+          </div>
+          <div class="hi">
+            <h4>Modular System Architecture</h4>
+            <img
+              src="assets/herculesarchitect.png"
+              alt="Modular System Architecture image"
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            />
+            <img
+              src="assets/herculesarchitecture.png"
+              alt="Modular System Architecture image"
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            />
+            <p>
+              Decoupled subsystems (perception, control, safety, UI) enable
+              rapid iteration and integration with clinical workflows.
+            </p>
+          </div>
+          <div class="hi">
+            <h4>Scalable Access to Care</h4>
+            <img
+              src="assets/trials.png"
+              alt="Scalable Access to Care image"
+              style="width: 100%; border-radius: 8px; margin-top: 10px"
+            />
+            <p>
+              Enables remote imaging in underserved settings while making
+              ultrasound safer and more sustainable for clinicians.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article -->
+      <section class="section" aria-labelledby="art-h2">
+        <h2 id="art-h2">Featured in IEEE Access</h2>
+        <p class="kicker">
+          Peer‑reviewed coverage of the methods, clinical protocol, and
+          outcomes.
+        </p>
+        <div class="article">
+          <article class="card" aria-labelledby="paper-h3">
+            <div class="hd">
+              <h3 id="paper-h3">
+                HERCULES: Haptically‑Enabled Remotely Controlled Ultrasound
+                Examination System
+              </h3>
+            </div>
+            <div class="bd">
+              <p>
+                <strong>Abstract (short):</strong> We present a tele‑robotic
+                ultrasound platform with real‑time haptics, designed for safe,
+                effective remote scanning. Clinical findings indicate image
+                quality comparable to manual scans with improved ergonomics for
+                operators.
+              </p>
+              <p>
+                <strong>Keywords:</strong> Telemedicine, haptics, ultrasound,
+                perception‑in‑the‑loop control, clinical trial.
+              </p>
+              <p>
+                <a
+                  class="btn"
+                  href="https://ieeexplore.ieee.org/document/10979984"
+                  target="_blank"
+                  rel="noopener"
+                  >Read the article ↗</a
+                >
+              </p>
+            </div>
+          </article>
+          <aside class="card" aria-labelledby="ref-h3">
+            <div class="hd"><h3 id="ref-h3">Recommended Links</h3></div>
+            <div class="bd">
+              <p>
+                • News coverage:
+                <a
+                  href="https://www.youtube.com/watch?v=ZCKWxHAiQvE"
+                  target="_blank"
+                  rel="noopener"
+                  >YouTube</a
+                >
+              </p>
+              <p>
+                • Featured article:
+                <a
+                  href="https://ieeeaccess.ieee.org/featured-articles/hercules_remotelycontrolled/"
+                  target="_blank"
+                  rel="noopener"
+                  >IEEE Access</a
+                >
+              </p>
+              <p>• Contact the team for collaborations or clinical pilots.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Footer CTA -->
+      <div class="cta-bar" role="region" aria-label="Call to action">
+        <p>
+          <strong>Interested in collaboration, licensing, or media?</strong>
+          We’d love to connect.
+        </p>
+        <div class="cta">
+          <a
+            class="btn primary"
+            href="mailto:parhamkebria@ieee.org"
+            aria-label="Email contact"
+            >✉️ Contact</a
+          >
+          <a
+            class="btn"
+            href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10979984"
+            target="_blank"
+            rel="noopener"
+            >Download / Read the Paper</a
+          >
+        </div>
       </div>
-    </section>
+    </main>
 
-    <!-- Footer CTA -->
-    <div class="cta-bar" role="region" aria-label="Call to action">
-      <p><strong>Interested in collaboration, licensing, or media?</strong> We’d love to connect.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:parhamkebria@ieee.org" aria-label="Email contact">✉️ Contact</a>
-        <a class="btn" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10979984" target="_blank" rel="noopener">Download / Read the Paper</a>
-      </div>
-    </div>
-  </main>
+    <footer class="wrap" style="opacity: 0.8; font-size: 13px">
+      © <span id="y"></span> HERCULES Tele‑Robotic Ultrasound Project — All
+      rights reserved —
+      <a href="index.html">Parham Kebria</a>
+    </footer>
 
-  <footer class="wrap" style="opacity:.8; font-size: 13px;">
-    © <span id="y"></span> HERCULES Tele‑Robotic Ultrasound Project — <a href="index.html">parhamkebria.com</a>
-  </footer>
-
-  <script>
-    // Simple year stamp
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script>
+      // Simple year stamp
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

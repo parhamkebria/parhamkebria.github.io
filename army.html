@@ -1,68 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Autonomous Leader-Follower Vehicles | Parham Kebria</title>
-  <meta name="description" content="Autonomous Leader-Follower Project — Vision-based real-time ML/DL systems enabling autonomous military convoys with vehicle-to-vehicle networking." />
-  <style>
-    :root {
-      --bg: #0b1220;
-      --panel: rgba(255,255,255,0.06);
-      --card: rgba(255,255,255,0.04);
-      --text: #e8eefc;
-      --muted: #b7c3e0;
-      --brand: #5aa9ff;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      --radius: 18px;
-      --maxw: 960px;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color: var(--text); background: var(--bg); line-height: 1.6; }
-    a { color: var(--brand); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Autonomous Leader-Follower Vehicles | Parham Kebria</title>
+    <meta
+      name="description"
+      content="Autonomous Leader-Follower Project — Vision-based real-time ML/DL systems enabling autonomous military convoys with vehicle-to-vehicle networking."
+    />
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: rgba(255, 255, 255, 0.06);
+        --card: rgba(255, 255, 255, 0.04);
+        --text: #e8eefc;
+        --muted: #b7c3e0;
+        --brand: #5aa9ff;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --maxw: 960px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.6;
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
 
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px 80px; }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px 20px 80px;
+      }
 
-    .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(90,169,255,0.18), rgba(255,255,255,0.02)); border-radius: var(--radius); box-shadow: var(--shadow); }
-    .hero h1 { font-size: clamp(28px, 4.5vw, 46px); margin: 0; }
-    .hero p { color: var(--muted); max-width: 700px; margin: 12px auto 0; font-size: 18px; }
+      .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(90, 169, 255, 0.18),
+          rgba(255, 255, 255, 0.02)
+        );
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .hero h1 {
+        font-size: clamp(28px, 4.5vw, 46px);
+        margin: 0;
+      }
+      .hero p {
+        color: var(--muted);
+        max-width: 700px;
+        margin: 12px auto 0;
+        font-size: 18px;
+      }
 
-    .video-card { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); box-shadow: var(--shadow); margin-top: 40px; overflow: hidden; }
-    .video-card iframe { width: 100%; height: 480px; border: 0; display: block; }
+      .video-card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-top: 40px;
+        overflow: hidden;
+      }
+      .video-card iframe {
+        width: 100%;
+        height: 480px;
+        border: 0;
+        display: block;
+      }
 
-    .content { margin-top: 40px; background: var(--panel); padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); }
-    .content h2 { margin-top: 0; font-size: 24px; }
-    .content p { color: var(--muted); font-size: 17px; }
+      .content {
+        margin-top: 40px;
+        background: var(--panel);
+        padding: 28px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .content h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      .content p {
+        color: var(--muted);
+        font-size: 17px;
+      }
 
-    footer { text-align: center; padding: 20px; font-size: 13px; color: var(--muted); }
-  </style>
-</head>
-<body>
-  <header class="wrap">
-    <div class="hero">
-      <h1>Autonomous Leader-Follower Vehicles</h1>
-      <p>Advanced autonomous driving research project enabling military convoys to operate remotely or fully autonomously under extreme conditions.</p>
-    </div>
-  </header>
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap">
+      <div class="hero">
+        <h1>Autonomous Leader-Follower Vehicles</h1>
+        <p>
+          Advanced autonomous driving research project enabling military convoys
+          to operate remotely or fully autonomously under extreme conditions.
+        </p>
+      </div>
+    </header>
 
-  <main class="wrap">
-    <div class="video-card">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/EISgE9mGMtw?si=9vzmcAUKFJbGDZ1e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <main class="wrap">
+      <div class="video-card">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/EISgE9mGMtw?si=9vzmcAUKFJbGDZ1e"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
 
-    <div class="content">
-      <h2>About the Project</h2>
-      <p>This project, developed in collaboration with the Australian Army and Department of Defence, focused on designing and implementing vision-based real-time machine learning and deep learning systems for autonomous military trucks. Core contributions included real-time perception, decision-making, vehicle-to-vehicle networking, and safety mechanisms such as emergency braking and autonomous driving strategies.</p>
-      <p>The technology was validated in real-world conditions and received national media attention, culminating in the prestigious Essington Lewis Award in the Support of Service sector.</p>
-    </div>
-  </main>
+      <div class="content">
+        <h2>About the Project</h2>
+        <p>
+          This project, developed in collaboration with the Australian Army and
+          Department of Defence, focused on designing and implementing
+          vision-based real-time machine learning and deep learning systems for
+          autonomous military trucks. Core contributions included real-time
+          perception, decision-making, vehicle-to-vehicle networking, and safety
+          mechanisms such as emergency braking and autonomous driving
+          strategies.
+        </p>
+        <p>
+          The technology was validated in real-world conditions and received
+          national media attention, culminating in the prestigious Essington
+          Lewis Award in the Support of Service sector.
+        </p>
+      </div>
+    </main>
 
-  <footer>
-    © <span id="y"></span> <a href="index.html">Parham Kebria</a> — Autonomous Leader-Follower Project
-  </footer>
+    <footer>
+      © <span id="y"></span> Autonomous Leader-Follower Project — All rights
+      reserved — <a href="index.html">Parham Kebria</a>
+    </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
