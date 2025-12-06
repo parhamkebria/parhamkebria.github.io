@@ -28,6 +28,24 @@
             font-size: 1.5rem;
             margin-top: 20px;
         }
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+        .back-link img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .back-link:hover {
+            opacity: 0.8;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -35,6 +53,10 @@
     </style>
 </head>
 <body>
+    <a href="projects.html" class="back-link">
+        <img src="assets/PiLogo.jpg" alt="Logo" draggable="false" oncontextmenu="return false;">
+        <span>Back</span>
+    </a>
     <div class="coming-soon">
         <h1>Coming Soon</h1>
         <p>This project page is under construction.</p>
