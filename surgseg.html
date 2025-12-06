@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | SurgSeg Project</title>
+    <link rel="icon" type="image/jpeg" href="assets/PiLogo.jpg">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .coming-soon {
+            text-align: center;
+        }
+        .coming-soon h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: fadeIn 2s;
+        }
+        .coming-soon p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+        .back-link img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .back-link:hover {
+            opacity: 0.8;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <a href="projects.html" class="back-link">
+        <img src="assets/PiLogo.jpg" alt="Logo" draggable="false" oncontextmenu="return false;">
+        <span>Back</span>
+    </a>
+    <div class="coming-soon">
+        <h1>Coming Soon</h1>
+        <p>This project page is under construction.</p>
+    </div>
+</body>
+</html>
