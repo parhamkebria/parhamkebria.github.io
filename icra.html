@@ -66,7 +66,24 @@
         margin: 12px auto 0;
         font-size: 18px;
       }
-
+      .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+        .back-link img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .back-link:hover {
+            opacity: 0.8;
+      }
       .video-card {
         background: var(--card);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -194,6 +211,10 @@
           target="_blank"
           >Read Paper on IEEE RA-L</a
         >
+        <a href="projects.html" class="back-link">
+              <img src="assets/PiLogo.jpg" alt="Logo" draggable="false" oncontextmenu="return false;">
+            <span>Back</span>
+        </a>
       </div>
     </main>
 
