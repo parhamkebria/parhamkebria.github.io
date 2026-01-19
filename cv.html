@@ -17,7 +17,7 @@
           <a href="index.html">
             <!-- <img src="assets/PiLogo.jpg" alt="Pi Logo" class="logo"> -->
             <img
-              src="assets/ParhamKebria-NoBackGround.png"
+              src="assets/PiLogo.jpg"
               alt="My Photo"
               class="logo"
               draggable="false"
@@ -27,7 +27,7 @@
           <h1>Parham Kebria</h1>
           <h2>Curriculum Vitae</h2>
           <button onclick="openCVModal()" class="cv-request-button">
-            📄 Request the Complete CV
+            📄 Request & Download CV
           </button>
         </header>
       </div>
@@ -234,14 +234,14 @@
       <div class="modal-content">
         <span class="close" onclick="closeCVModal()">&times;</span>
         <h2>Request Complete CV</h2>
-        <p>Please fill out the form below to request my complete CV.</p>
+        <p>Please fill out the form below. Your CV download will start automatically after submission.</p>
         
         <form id="cvRequestForm" onsubmit="submitCVRequest(event)">
           <input type="text" id="requesterName" name="name" placeholder="Your Name *" required>
           <input type="email" id="requesterEmail" name="email" placeholder="Your Email *" required>
           <input type="text" id="organization" name="organization" placeholder="Organization (Optional)">
           <textarea id="messageText" name="message" placeholder="Brief message (Optional)" rows="4"></textarea>
-          <button type="submit" class="submit-btn">Send Request</button>
+          <button type="submit" class="submit-btn">Submit & Download CV</button>
         </form>
         <div id="formStatus" style="display:none; margin-top:15px; padding:10px; border-radius:5px;"></div>
       </div>
@@ -274,23 +274,31 @@
           'Email: ' + email + '\n' +
           'Organization: ' + (org || 'Not specified') + '\n' +
           'Message: ' + (message || 'None') + '\n\n' +
-          'Please send CV to: ' + email
+          'This is an automated notification from your website.'
         );
         
         // Open email client
-        window.location.href = 'mailto:parhamkebria@ieee.org?subject=' + subject + '&body=' + body;
+        window.open('mailto:parhamkebria@ieee.org?subject=' + subject + '&body=' + body, '_blank');
+        
+        // Trigger CV download
+        const downloadLink = document.createElement('a');
+        downloadLink.href = 'assets/cv.pdf';
+        downloadLink.download = 'Parham_Kebria_CV.pdf';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
         
         // Show success message
         const status = document.getElementById('formStatus');
         status.style.display = 'block';
         status.style.backgroundColor = '#d4edda';
         status.style.color = '#155724';
-        status.innerHTML = '✓ Your email client has opened. Please send the email to complete your request!';
+        status.innerHTML = '✓ CV download started! Please send the email notification to complete your request.';
         
-        // Close modal after 3 seconds
+        // Close modal after 4 seconds
         setTimeout(() => {
           closeCVModal();
-        }, 3000);
+        }, 4000);
       }
 
       // Close modal when clicking outside
